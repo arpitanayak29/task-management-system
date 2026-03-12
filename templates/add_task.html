@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Add Task</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h2>Add Task</h2>
+
+<form method="POST">
+
+<label>Title</label>
+<input type="text" name="title" required>
+
+<label>Description</label>
+<textarea name="description"></textarea>
+
+<label>Due Date</label>
+<input type="date" name="due_date">
+
+<label>Status</label>
+<select name="status">
+<option>Pending</option>
+<option>In Progress</option>
+<option>Completed</option>
+</select>
+
+<label>Remarks</label>
+<textarea name="remarks"></textarea>
+
+<label>Created By</label>
+<input type="text" name="created_by">
+
+<button type="submit">Save Task</button>
+<a href="{{ url_for('index') }}" class="back-btn">Back</a>
+
+</form>
+
+</div>
+
+</body>
+</html>

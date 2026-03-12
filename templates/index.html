@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Task Manager</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Task Management System</h2>
+
+<div class="search-box">
+
+<form method="GET">
+<input type="text" name="search" placeholder="Search Task">
+<button type="submit">Search</button>
+</form>
+
+<a class="add-btn" href="/add">Add Task</a>
+
+</div>
+
+<table>
+
+<tr>
+<th>Title</th>
+<th>Description</th>
+<th>Due Date</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for task in tasks %}
+
+<tr>
+<td>{{task.title}}</td>
+<td>{{task.description}}</td>
+<td>{{task.due_date}}</td>
+<td>{{task.status}}</td>
+
+<td>
+<a class="edit" href="/edit/{{task.id}}">Edit</a>
+<a class="delete" href="/delete/{{task.id}}">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>
