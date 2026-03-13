@@ -43,7 +43,7 @@ task-management-system
 1. Clone the repository
 
 ```
- https://github.com/arpitanayak29/task-management-system
+ git clone https://github.com/arpitanayak29/task-management-system
 ```
 
 2. Go to project folder
